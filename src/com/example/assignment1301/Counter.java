@@ -18,9 +18,9 @@ public class Counter implements Serializable, Comparable<Counter> {
 	 * 
 	 */
 	private static final long serialVersionUID = 997698552402989531L;
-	String counterName;
-	Date initDate;
-	int Count;
+	private String counterName;
+	private Date initDate;
+	private int Count;
 	
 	public Counter(String counterName, Date initDate)
 	{
@@ -71,6 +71,7 @@ public class Counter implements Serializable, Comparable<Counter> {
 		return initDate;
 	}
 	
+	@Override
 	public String toString()
 	{
 		String msg =getCounterName() +" created on " +(getInitDate().getYear()+1900)+"/"+(getInitDate().getMonth()+1)

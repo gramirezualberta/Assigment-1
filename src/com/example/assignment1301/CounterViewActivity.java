@@ -33,6 +33,7 @@ public class CounterViewActivity extends Activity {
 		// Show the Up button in the action bar.
 		setupActionBar();
 		
+		//initialization
 		addButton = (Button) findViewById(R.id.add);
 		resetButton = (Button) findViewById(R.id.reset);
 		renameButton = (Button) findViewById(R.id.renameCounter);
@@ -40,24 +41,35 @@ public class CounterViewActivity extends Activity {
 		counterName = (TextView) findViewById(R.id.counterNameSelect);
 		counterCount = (TextView) findViewById(R.id.counterNumber);
 	
+		// Get the data from the CounterActivity
 		Intent intent =this.getIntent();
 		Bundle bundle= intent.getExtras();
 		aCounter = (Counter) bundle.getSerializable(SEND_DATA_COUNTER);
+		//this pass the current data to the view, do it can display the correct information to the user.
 		counterName.setText(aCounter.getCounterName());
 		counterCount.setText(Integer.toString(aCounter.getCount()));
 		
 
 	}
 	
+	/**
+	 * this method it is called after the user press the  "+" button from the screen and add 1 to the counter.
+	 * @param view
+	 */
 	public void addOne(View view)
 	{
 		int count = aCounter.getCount();
 		count++;
 		aCounter.setCount(count);
 		counterCount.setText(Integer.toString(aCounter.getCount()));
+		// refresh view
 		counterCount.invalidate();
 	}
 	
+	/**
+	 * This method wrap up all the new data that the user has modified and send them back to CounterActivity. Also, close the activity after the user press "quit" button
+	 * @param view
+	 */
 	public void quit(View view)
 	{
 		Intent intent = new Intent();
@@ -66,13 +78,17 @@ public class CounterViewActivity extends Activity {
 		finish();
 	}
 	
+	/**
+	 * This method rename the counterName, after the user press the "rename" button.
+	 * @param view
+	 */
 	public void rename(View view)
 	{
 		//testing code
 		Context context = this;
 		AlertDialog.Builder alertDialaBuilder = new AlertDialog.Builder(context);
 		alertDialaBuilder.setTitle("Rename counter");
-		alertDialaBuilder.setMessage("holas");
+		alertDialaBuilder.setMessage("rename");
 		
 		alertDialaBuilder.create();
 		alertDialaBuilder.show();
@@ -80,6 +96,10 @@ public class CounterViewActivity extends Activity {
 		
 	}
 	
+	/**
+	 * This mehtod reset the counter, that is, count = 0 and the the date it's reset to the current time after the user press "reset" button
+	 * @param view
+	 */
 	public void reset(View view)
 	{
 	    aCounter.setCount(0);

@@ -43,7 +43,7 @@ public class CreateNewCounterActivity extends Activity {
 		String name =nameCounter.getText().toString();
 		Intent intentName = new Intent();
 
-		if(!name.isEmpty()){
+		if(name.isEmpty()){
 			Toast.makeText(this, "No name enter", Toast.LENGTH_SHORT).show();
 		}
 		else

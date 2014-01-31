@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">GRAMIREZ</string>
+    <string name="action_settings">Settings</string>
+    <string name="add_counter">Add a new counter</string>
+    <string name="title_activity_create_new_counter">CreateNewCounterActivity</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="finish_add_counter">Create counter</string>
+    <string name="cancel_button">Cancel</string>
+    <string name="counter_create_hint">Name of the counte</string>
+    <string name="title_activity_counter_view">CounterViewActivity</string>
+    <string name="counter_number">0</string>
+    <string name="add_button">+</string>
+    <string name="reset_button">Reset</string>
+    <string name="quit_button">Quit</string>
+    <string name="stat_button">stat</string>
+    <string name="rename_counter">Rename</string>
+
+</resources>

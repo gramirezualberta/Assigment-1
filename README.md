@@ -8,3 +8,4 @@ Also, the user can reset the counter, and rename it.
 
 LICENCE
 =======
+Apache v2.0 Licence
